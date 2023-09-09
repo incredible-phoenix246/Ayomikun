@@ -113,20 +113,31 @@
 	<script src="vendor/countdowntime/moment-timezone-with-data.min.js"></script>
 	<script src="vendor/countdowntime/countdowntime.js"></script>
 	<script>
+	$(document).ready(function () {
+	// Specify the end date and time
+		const endDate = new Date('2023-09-21T00:00:00'); // Set to the 26th of this month
+
+		// Convert the end date to the required format
+		const endtimeYear = endDate.getUTCFullYear();
+		const endtimeMonth = endDate.getUTCMonth();
+		const endtimeDate = endDate.getUTCDate();
+		const endtimeHours = endDate.getUTCHours();
+		const endtimeMinutes = endDate.getUTCMinutes();
+		const endtimeSeconds = endDate.getUTCSeconds();
+
+		// Initialize the countdown with the end date
 		$('.cd100').countdown100({
-			/*Set Endtime here*/
-			/*Endtime must be > current time*/
-			endtimeYear: 0,
-			endtimeMonth: 0,
-			endtimeDate: 21,
-			endtimeHours: 00,
-			endtimeMinutes: 0,
-			endtimeSeconds: 0,
-			timeZone: "" 
-			// ex:  timeZone: "America/New_York"
-			//go to " http://momentjs.com/timezone/ " to get timezone
+			endtimeYear,
+			endtimeMonth,
+			endtimeDate,
+			endtimeHours,
+			endtimeMinutes,
+			endtimeSeconds,
+			timeZone: ""
 		});
+	});
 	</script>
+
 <!--===============================================================================================-->
 	<script src="vendor/tilt/tilt.jquery.min.js"></script>
 	<script >
